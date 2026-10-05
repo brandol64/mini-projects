@@ -44,7 +44,7 @@ console.log("Grade Percentage: " + gradePercentage.toFixed(2));
 
 let totalDistance = 150; // in miles
 let fuelEfficiency = 25;
-letgasPrice = 8.43;
+let gasPrice = 8.43;
 
 let totalGasCost = (totalDistance / fuelEfficiency) * gasPrice;
 console.log("Total Gas Cost: " + totalGasCost.toFixed(2));
