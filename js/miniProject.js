@@ -1,9 +1,14 @@
 console.log("Hello, World! This is a mini project.");
 
+let tipBtn = document.getElementById("tipButton");
+document.addEventListener("click", function() {
+    console.log("YOU CLICKED!")
+});
+
 //tip calculator
 let tipAmount;
 
-let subTotal=67.72;
+let subTotal=  document.getElementById("subTotalInput").valueAsNumber;
 
 let totalBill;
 
