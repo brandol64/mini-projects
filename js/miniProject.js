@@ -23,3 +23,23 @@ let grossPay;
 
 grossPay = hoursWorked * hourlyRate;
 console.log("Gross Pay: " + grossPay.toFixed(2));
+
+//grade calculator
+
+let pointsEarned = 85;
+let totalPoints = 100;
+let grade;
+
+let gradePercentage = (pointsEarned / totalPoints) * 100;
+
+grade = (pointsEarned / totalPoints) * 100;
+console.log("Grade Percentage: " + gradePercentage.toFixed(2));
+
+//Gas Cost Calculator
+
+let totalDistance = 150; // in miles
+let fuelEfficiency = 25;
+letgasPrice = 8.43;
+
+let totalGasCost = (totalDistance / fuelEfficiency) * gasPrice;
+console.log("Total Gas Cost: " + totalGasCost.toFixed(2));
