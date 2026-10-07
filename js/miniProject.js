@@ -1,50 +1,62 @@
-console.log("Hello, World! This is a mini project.");
+let tipOutput=document.getElementById('tipAmountOutput');
+let TotalOutput=document.getElementById('totalBillOutput');
+let checkOutput=document.getElementById('paycheckAmountOutput');
+let gradeOutput=document.getElementById('percentGradeOutput');
+let gasOutput=document.getElementById('gasCostOutput');
 
-let tipBtn = document.getElementById("tipButton");
-document.addEventListener("click", function() {
-    console.log("YOU CLICKED!")
-});
 
-//tip calculator
-let tipAmount;
+let tipBtn=document.getElementById("tipButton");
+tipBtn.addEventListener('click', function(){
+    //Tip Calculator Varables
+    let subTotal=document.getElementById('subTotalInput').valueAsNumber;
+    let percentage=document.getElementById('percentageInput').valueAsNumber;
+    let tipAmount;
+    let totalBill;
 
-let subTotal=  document.getElementById("subTotalInput").valueAsNumber;
+    //Do the math
+    tipAmount=subTotal*percentage;
+    totalBill=subTotal+tipAmount;
 
-let totalBill;
+    //Only show 2 decimal places
+    tipAmount=tipAmount.toFixed(2);
+    totalBill=totalBill.toFixed(2);
 
-const tipPercentage = 0.2; // 20% tip
+    //Show the output
+    tipOutput.innerHTML="$"+tipAmount;
+    TotalOutput.innerHTML="$"+totalBill;
+})
 
-tipAmount = subTotal * tipPercentage;
-console.log("Tip Amount: " + tipAmount.toFixed(2));
+let paycheckBtn=document.getElementById("paycheckButton");
+paycheckBtn.addEventListener('click',function (){
+    //Paycheck Calculator Variables
+    let hoursWorked=document.getElementById('hoursWorkedInput').valueAsNumber
+})
 
-totalBill = subTotal + tipAmount;
-console.log("Total Amount due: " + totalBill.toFixed(2));
 
-//paycheck calculator 
+//Paycheck calculator 
 
-let hoursWorked = 40;
-let hourlyRate = 15.50;
-let grossPay;
+let paycheckBt = document.getElementById("paycheckButton");
+paycheckBtn.addEventListener('click', function(){
 
-grossPay = hoursWorked * hourlyRate;
-console.log("Gross Pay: " + grossPay.toFixed(2));
+let hourWorked = document.getElementById('hoursWorkedInput').valueAsNumber;
+let hourlyRate = document.getElementById('hourlyRateInput').valueAsNumber;
+let paycheckAmount;
 
-//grade calculator
+paycheckAmount = hoursWorked * hourlyRate;
+paycheckAmount = paycheckAmount.toFixed(2);
+checkOutput.innerHTML = "$" + paycheckAmount;
 
-let pointsEarned = 85;
-let totalPoints = 100;
-let grade;
+})
 
-let gradePercentage = (pointsEarned / totalPoints) * 100;
+let percentageGradeBtn=document.getElementById("gradeButton");
+percentageGradeBtn.addEventListener('click', function() {
+    //Percentage Grade Calculator Variables
+    let totalPoints=document.getElementById('totalPointsInput').valueAsNumber;
+    let pointsEarned=document.getElementById('pointsEarnedInput').valueAsNumber;
+    let percentGrade;
 
-grade = (pointsEarned / totalPoints) * 100;
-console.log("Grade Percentage: " + gradePercentage.toFixed(2));
+percentGrade = percentGrade.toFixed(2);
+percentGrade = (pointsEarned / totalPoints) * 100;
+gradeOutput.innerHTML = percentGrade + "%";
 
-//Gas Cost Calculator
-
-let totalDistance = 150; // in miles
-let fuelEfficiency = 25;
-let gasPrice = 8.43;
-
-let totalGasCost = (totalDistance / fuelEfficiency) * gasPrice;
-console.log("Total Gas Cost: " + totalGasCost.toFixed(2));
+})
