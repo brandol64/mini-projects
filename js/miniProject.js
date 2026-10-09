@@ -3,8 +3,8 @@ let tipOutput = document.getElementById('tipAmountOutput');
 let totalOutput = document.getElementById('totalBillOutput');
 let checkOutput = document.getElementById('paycheckAmountOutput');
 let gradeOutput = document.getElementById('percentGradeOutput');
-let gasOutput = document.getElementById('gasCostOutput');
 let diceOutput = document.getElementById('diceOutput');
+let usernameOutput = document.getElementById('usernameOutput');
 
 let tipBtn = document.getElementById("tipButton");
 tipBtn.addEventListener('click', function () {
@@ -77,52 +77,21 @@ gradeBtn.addEventListener('click', function () {
 })
 
 
-let gasBtn = document.getElementById("gasButton");
-gasBtn.addEventListener('click', function () {
-
-
-    // Gas Cost Calculator Variables
-    let tankGallons = document.getElementById('tankGallonsInput').valueAsNumber;
-    let perGallon = document.getElementById('perGallonInput').valueAsNumber;
-    let gasCost;
-
-
-    // Do the math
-    gasCost = tankGallons * perGallon;
-
-
-    // Only show 2 decimal places
-    gasCost = gasCost.toFixed(2);
-
-
-    // Show the output
-    gasOutput.innerHTML = "$" + gasCost;
-
-
-})
-
-
-let dieBtn = document.getElementById("dieButton");
+let dieBtn = document.getElementById("diceButton");
 dieBtn.addEventListener('click', function () {
 
 
-
-
-    // Gas Cost Calculator Variables
+    // Dice Roll Variables
     let numberRolled;
 
 
-
-
     // Do the math
-    numberRolled = Math.floor(Math.random() * 6 + 1);
+    //Multiply by 6 because there are 6 sides to a die
+    //adding 1 because you can't roll a zero!
+    numberRolled = Math.floor(Math.random() * 6 + 1);//adding 1 because you can't roll a zero!
 
 
-
-
-    // Only show 2 decimal places
-    numberRolled = Math.floor(numberRolled)
-
+    //Math.floor rounds our random number down to a whole number
 
 
 
@@ -130,6 +99,28 @@ dieBtn.addEventListener('click', function () {
     diceOutput.innerHTML = numberRolled;
 
 
+})
+let usernameBtn = document.getElementById("usernameButton");
+usernameBtn.addEventListener('click', function () {
+    // Grade Calculator Variables
+    let firstName = document.getElementById('firstNameInput').value;
+    let favoriteGame = document.getElementById('favoriteGameInput').value;
+    let number;
+    let username;
+
+
+    number = Math.random() * 370 + 1
+    number = Math.floor(number);
+
+    // Do the math
+    username = firstName + favoriteGame + number;
+
+
+
+
+
+    // Show the output
+    usernameOutput.innerHTML = username;
 
 
 })

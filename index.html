@@ -97,8 +97,7 @@
                 </div>
             </div>
 
-
-            <!-- Gas Cost Calculator: tankGallons, perGallon, gasCost -->
+            <!-- Gas Cost Calculator -->
             <div class="col-12 col-md-6">
                 <div class="card h-100 shadow-sm">
                     <div class="card-header bg-danger text-white">
@@ -122,24 +121,45 @@
                     </div>
                 </div>
             </div>
-            <!-- Random Number Generator: pointsEarned, totalPoints, percentGrade -->
+
+            <!-- Random Dice Roll -->
             <div class="col-12 col-md-6">
                 <div class="card h-100 shadow-sm">
                     <div class="card-header bg-purple text-white">
-                        <h2 class="h4 mb-0">Random Number Generator</h2>
+                        <h2 class="h4 mb-0">Dice Roll</h2>
                     </div>
-                    <div class="card-body">
-                        
-                        <button type="button" class="btn btn-purple" id="gradeButton">Roll Dice</button>
+                    <div class="card-body text-center">
+                        <button type="button" class="btn btn-purple" id="diceButton">Roll the Die!</button>
                     </div>
                     <div class="card-footer">
-                        <p class="mb-0">Your Grade: <strong id="diceRolledoutput">--</strong></p>
+                        <p class="mb-0">You Rolled: <strong id="diceOutput">--</strong></p>
                     </div>
                 </div>
             </div>
-
-
-
+            <!-- Username Generator -->
+            <div class="col-12 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-orange">
+                        <h2 class="h4 mb-0">Username Generator</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="firstNameInput" class="form-label">First Name</label>
+                            <input type="value" class="form-control" id="firstNameInput" min="0" step="any"
+                                placeholder="Bob">
+                        </div>
+                        <div class="mb-3">
+                            <label for="favoriteGame" class="form-label">Favorite Game</label>
+                            <input type="value" class="form-control" id="favoriteGameInput" min="0" step="any"
+                                placeholder="Uno">
+                        </div>
+                        <button type="button" class="btn btn-orange" id="usernameButton">Generate Username</button>
+                    </div>
+                    <div class="card-footer">
+                        <p class="mb-0">Username: <strong id="usernameOutput">--</strong></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
